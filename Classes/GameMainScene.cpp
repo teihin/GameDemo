@@ -1,5 +1,5 @@
 #include "GameMainScene.h"
-
+#include "Joystick.h"
 
 USING_NS_CC;
 
@@ -38,6 +38,14 @@ bool GameMainScene::init()
     auto menu = Menu::create(closeItem, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
+
+
+	//´´½¨Ò¡¸Ë²ã
+	auto pController = Joystick::create("./gameui/rocker_bg.png", "./gameui/rocker_ball.png");
+	pController->setAutoPosition(true);
+	pController->onRun();
+	pController->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+	this->addChild(pController);
 }
 void GameMainScene::menuCloseCallback(Ref* pSender)
 {

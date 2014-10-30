@@ -1,6 +1,6 @@
 #include "GameMainScene.h"
 #include "Joystick.h"
-
+#include "obj\Player.h"
 USING_NS_CC;
 
 Scene* GameMainScene::createScene()
@@ -46,6 +46,11 @@ bool GameMainScene::init()
 	pController->onRun();
 	pController->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
 	this->addChild(pController);
+
+	//Ìí¼ÓÖ÷½Ç²ã
+	auto pPlayer = Player::create();
+	pPlayer->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+	this->addChild(pPlayer);
 }
 void GameMainScene::menuCloseCallback(Ref* pSender)
 {

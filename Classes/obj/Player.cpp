@@ -15,8 +15,8 @@ bool Player::init()
 	m_pPlayerSprite = Sprite::createWithSpriteFrameName("char_11001_1_4_00.png");
 	//m_pPlayerSprite->setPosition(Vec2(vSize.width / 2, vSize.height / 2));
 	this->addChild(m_pPlayerSprite);
-	std::string strChar = "char_11001";
-	m_pPlayerSprite->runAction(RepeatForever::create(getRunActionsFromSprite(strChar, FStateRun, FDirRight)));
+	m_strCharString = "char_11001";
+	//m_pPlayerSprite->runAction(RepeatForever::create(getRunActionsFromSprite(m_strCharString, FStateRun, FDirRight)));
 	
 	return true;
 }
@@ -119,4 +119,14 @@ ActionInterval* Player::getRunActionsFromSprite(std::string &strPath, FigureStat
 	CCAnimation* movie = CCAnimation::createWithSpriteFrames(array,getFrameRate(nType,1));
 	CCAnimate* animate = CCAnimate::create(movie);
 	return animate;
+}
+
+void Player::setCurState(FigureDirectionType nDirType, FigureStateType nStateType)
+{
+	m_nDirect = nDirType;
+	m_nState = nStateType;
+
+	//停止之前动画启动新状态
+	m_pPlayerSprite->stopAllActions();
+	m_pPlayerSprite->runAction(RepeatForever::create(getRunActionsFromSprite(m_strCharString, m_nState, m_nDirect)));
 }

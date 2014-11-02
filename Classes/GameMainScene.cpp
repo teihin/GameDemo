@@ -45,6 +45,8 @@ bool GameMainScene::init()
 	pController->setAutoPosition(true);
 	pController->onRun();
 	pController->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+	//设置摇杆回调
+	pController->onDirection = CC_CALLBACK_1(GameMainScene::mouthCallBack,this);
 	this->addChild(pController);
 
 	//添加主角层
@@ -64,4 +66,9 @@ void GameMainScene::menuCloseCallback(Ref* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
+}
+
+void GameMainScene::mouthCallBack(JoystickEnum nDir)
+{
+
 }

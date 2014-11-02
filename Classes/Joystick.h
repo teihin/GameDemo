@@ -6,15 +6,15 @@ USING_NS_CC;
  
 enum JoystickEnum
 {
-    DEFAULT,
-    D_UP,
-    D_DOWN,
-    D_LEFT,
-    D_RIGHT,
-    D_LEFT_UP,
-    D_LEFT_DOWN,
-    D_RIGHT_UP,
-    D_RIGHT_DOWN
+    D_UP = 8,
+	D_LEFT_UP = 7,
+	D_LEFT = 6,
+	D_LEFT_DOWN = 5,
+    D_DOWN = 4,
+	D_RIGHT_DOWN = 3,
+    D_RIGHT = 2,
+	D_RIGHT_UP = 1,
+	DEFAULT = 0
 };
  
 class Joystick : public Layer

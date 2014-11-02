@@ -1,6 +1,6 @@
 #pragma once
 #include "cocos2d.h"
-
+#include "Joystick.h"
 
 class GameMainScene: public cocos2d::Layer
 {
@@ -16,5 +16,7 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameMainScene);
+public:
+	void mouthCallBack(JoystickEnum nDir); //鼠标方向回调
 };
 

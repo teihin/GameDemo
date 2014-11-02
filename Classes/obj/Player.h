@@ -18,7 +18,7 @@ public:
 	void setCurState(FigureDirectionType nDirType, FigureStateType nStateType); //设置当前方向和状态，同时触发动画
 private:	
 	cocos2d::ActionInterval* getRunActionsFromSprite(std::string &strPath, FigureStateType nType, FigureDirectionType nDir);
-	//test111
+	
 
 };
 

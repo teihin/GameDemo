@@ -17,7 +17,7 @@ bool Player::init()
 	this->addChild(m_pPlayerSprite);
 	m_strCharString = "char_11001";
 	//m_pPlayerSprite->runAction(RepeatForever::create(getRunActionsFromSprite(m_strCharString, FStateRun, FDirRight)));
-	
+	setCurState(FigureDirectionType::FDirLeft, FigureStateType::FStateWalk);
 	return true;
 }
 
@@ -125,6 +125,16 @@ void Player::setCurState(FigureDirectionType nDirType, FigureStateType nStateTyp
 {
 	m_nDirect = nDirType;
 	m_nState = nStateType;
+
+	//由于图片没有左方向，所有左方向的动画都需要翻转180度
+	if (m_nDirect == FDirLeft || m_nDirect == FDirLeftAndUp || m_nDirect == FDirDownAndLeft)
+	{
+		m_pPlayerSprite->setRotationY(180);
+	}
+	else
+	{
+		m_pPlayerSprite->setRotationY(0);
+	}
 
 	//停止之前动画启动新状态
 	m_pPlayerSprite->stopAllActions();

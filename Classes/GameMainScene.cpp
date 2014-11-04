@@ -39,6 +39,11 @@ bool GameMainScene::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
+	//创建地图层
+	std::string file = "./map/map.tmx";  
+	auto str = String::createWithContentsOfFile(FileUtils::getInstance()->fullPathForFilename(file.c_str()).c_str());
+	auto mapMain = TMXTiledMap::createWithXML(str->getCString(), "");
+	auto maplayer = mapMain->layerNamed("mainbg");
 	
 
 	//创建摇杆层
@@ -55,6 +60,8 @@ bool GameMainScene::init()
 	pPlayer->setTag(100);
 	pPlayer->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
 	this->addChild(pPlayer);
+
+
 }
 void GameMainScene::menuCloseCallback(Ref* pSender)
 {
@@ -79,4 +86,6 @@ void GameMainScene::mouthCallBack(JoystickEnum nDir)
 	{
 		pPlayer->setCurState((FigureDirectionType)nDir, FigureStateType::FStateRun);
 	}
+
+	//获取地图层，并移动地图
 }

@@ -13,6 +13,9 @@
     <Filter Include="Classes\对象">
       <UniqueIdentifier>{6af7b40f-5250-4f2a-95f0-c8586465142c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\地图">
+      <UniqueIdentifier>{ff9cbd72-66e1-4f61-b9fd-cba887d549e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -33,6 +36,7 @@
     <ClCompile Include="..\Classes\obj\Player.cpp">
       <Filter>Classes\对象</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\map\MapLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -56,6 +60,7 @@
     <ClInclude Include="..\Classes\obj\Player.h">
       <Filter>Classes\对象</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\map\MapLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

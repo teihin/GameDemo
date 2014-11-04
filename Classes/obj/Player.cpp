@@ -123,6 +123,11 @@ ActionInterval* Player::getRunActionsFromSprite(std::string &strPath, FigureStat
 
 void Player::setCurState(FigureDirectionType nDirType, FigureStateType nStateType)
 {
+	//如果方向和状态都不变，为避免卡顿不调整状态
+	if (nDirType == m_nDirect&& nStateType == m_nState)
+		return;
+
+
 	m_nDirect = nDirType;
 	m_nState = nStateType;
 

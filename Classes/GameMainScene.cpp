@@ -39,6 +39,7 @@ bool GameMainScene::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
+	
 
 	//创建摇杆层
 	auto pController = Joystick::create("./gameui/rocker_bg.png", "./gameui/rocker_ball.png");
@@ -51,6 +52,7 @@ bool GameMainScene::init()
 
 	//添加主角层
 	auto pPlayer = Player::create();
+	pPlayer->setTag(100);
 	pPlayer->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
 	this->addChild(pPlayer);
 }
@@ -70,5 +72,11 @@ void GameMainScene::menuCloseCallback(Ref* pSender)
 
 void GameMainScene::mouthCallBack(JoystickEnum nDir)
 {
-
+	//实时修改主角方向
+	//获取主角
+	Player* pPlayer = (Player*)getChildByTag(100);
+	if (pPlayer)
+	{
+		pPlayer->setCurState((FigureDirectionType)nDir, FigureStateType::FStateRun);
+	}
 }

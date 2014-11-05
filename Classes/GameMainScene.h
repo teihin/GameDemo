@@ -18,5 +18,11 @@ public:
     CREATE_FUNC(GameMainScene);
 public:
 	void mouthCallBack(JoystickEnum nDir); //鼠标方向回调
+
+	void setViewPointCenter(Point position,float dtTime);//设置摄像机中心位置
+	void moveMapTimmer1(float dt);
+	void moveMapTimmer2(float dt);
+public:
+	cocos2d::TMXTiledMap* _tileMap;
 };
 

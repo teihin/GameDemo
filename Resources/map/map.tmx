@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="55" tileheight="55">
+ <tileset firstgid="1" name="mainmap" tilewidth="55" tileheight="55">
+  <image source="map.jpg" width="1280" height="800"/>
+ </tileset>
+ <layer name="mainbg" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt1tWzlVUcBuDv0N1Iw6FL6a4DKCp2gdiJiq3YhYEJNnZ3oajY3QXY2N3Y3fWci/UH7LX2xTfDN3Oeyz37zLt/76x3fpZlp3Iap3MGZ3IWZ7OAcziX8zifC7iQi7iYS7iUy7icKziAAzmIgzmEQzmMwzmCIzmKORzNQAYxmCEMZRjDGcFIRjGaMYxlHOO5iqu5hmu5juu5gRu5iYXczC0s4lZu43YWcwd3chd3cw/zmF9iRmuyFmszlXVYl/VYnw3YkI3YmE3YlM24j/t5gAd5iId5hEd5jMd5gid5iqd5hmd5jiUsZRnP8wJXRmS0DduyHduzAzuyEzszk13Yld2Yxe7swUu8zCu8ynJe43Xe4E3e4m3e4V3e430+4EM+4mM+4VM+496IjGJu8RiO5QtW8CVf8TXf8C3f8T0/8CM/8TO/8Cu/8Tt/8Cd/8Tf/8GJERjG3GPr6H1mFP2pQk1rUpg51qUd9GtCQRjSmCU1pRnNa0JJWfB6RUcwthr6u4jvb0JZ2tKcDHelEZ7pQSVe60Z0e9KQXvelDX/rRn38jMoq5xdDX1Xx+AAMZxGCGMJRhDGcEIxnFaMYwlnGMZwJVTGQSk2ldUXpGMbcY+urjWQ1qUova1KEu9ahPAxrSiMY0oSnNaE4LWtKK1tW/MatWlJ5RzC2GvralHe3pQEc60ZkuVNKVbnSnBz3pRW/60Jd+9K/+/6t/YwZEZBRzi6GvKW/oBKqYyCQmszprMCUio5hbDH1NeUOnMZ3NmcEWbMlWbJ2VnlHMLYa+pryhe7IXe7MP+7If+zM7Kz2jlK6mvKHHMZfjOYETOYmTOSUrPaOUrqa8oeXevCldTXlDy715U7qa8oaWe/OmdDXlDS335k3pasobWu7Nm9LVlDe03Js3paspb2i5N29KV1Pe0HJv3jzu3TYRGRV7t9i7xd4t9m5lVuzdYu8We7fYu1mxdyuKvVvs3WLvFnt35du7IaOYzuZp74aMYjqbp70bMorpbJ72bsgo5h7ztHdDRjH3mKe9GzKKucc87d2QUcw95mnvhoxi7jFPezdkFHOPedq7IaOYe/wf6+VC/g==
+  </data>
+ </layer>
+ <objectgroup name="obj">
+  <object name="playerobj" x="562" y="2328" width="32" height="26"/>
+ </objectgroup>
+</map>

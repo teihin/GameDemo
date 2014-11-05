@@ -11,7 +11,7 @@ public:
 	std::string m_strCharString;	//设置角色字符串
 	FigureDirectionType m_nDirect;	//当前方向
 	FigureStateType		m_nState;	//当前状态
-
+	cocos2d::Point	m_nCurPosition;			//当前坐标
 
 	cocos2d::Sprite* m_pPlayerSprite; //玩家精灵
 public:

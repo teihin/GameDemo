@@ -13,7 +13,7 @@ bool Player::init()
 
 	//加上主角精灵试试
 	m_pPlayerSprite = Sprite::createWithSpriteFrameName("char_11001_1_4_00.png");
-	m_pPlayerSprite->setPosition(Vec2(-100, -100));
+	//m_pPlayerSprite->setPosition(Vec2(-100, -100));
 	this->addChild(m_pPlayerSprite);
 	m_strCharString = "char_11001";
 	//m_pPlayerSprite->runAction(RepeatForever::create(getRunActionsFromSprite(m_strCharString, FStateRun, FDirRight)));

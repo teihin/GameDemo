@@ -14,7 +14,10 @@ public:
 	cocos2d::Point	m_nCurPosition;			//当前坐标
 
 	cocos2d::Sprite* m_pPlayerSprite; //玩家精灵
+
+	int m_nGridWidth;	//坐标格宽度
 public:
+	void ShowGridBox(int nGridW);
 	void setCurState(FigureDirectionType nDirType, FigureStateType nStateType); //设置当前方向和状态，同时触发动画
 private:	
 	cocos2d::ActionInterval* getRunActionsFromSprite(std::string &strPath, FigureStateType nType, FigureDirectionType nDir);

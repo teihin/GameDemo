@@ -17,8 +17,20 @@ bool Player::init()
 	this->addChild(m_pPlayerSprite);
 	m_strCharString = "char_11001";
 	//m_pPlayerSprite->runAction(RepeatForever::create(getRunActionsFromSprite(m_strCharString, FStateRun, FDirRight)));
-	setCurState(FigureDirectionType::FDirLeft, FigureStateType::FStateWalk);
+	setCurState(FigureDirectionType::FDirNone, FigureStateType::FStateNone);
+
+
+
 	return true;
+}
+void Player::ShowGridBox(int nGridW)
+{
+	//画个框框
+	m_nGridWidth = nGridW;
+	auto box = DrawNode::create();
+	Vec2 vc1[4] = { Vec2(-m_nGridWidth / 2, -m_nGridWidth / 2), Vec2(m_nGridWidth / 2, -m_nGridWidth / 2), Vec2(m_nGridWidth / 2, m_nGridWidth / 2), Vec2(-m_nGridWidth / 2, m_nGridWidth / 2) };
+	box->drawPolygon(vc1, 4, Color4F(0, 0, 0, 0), 1, Color4F::BLUE);
+	addChild(box);
 }
 
 static float getFrameRate(FigureStateType stateType, int type)
@@ -128,8 +140,13 @@ void Player::setCurState(FigureDirectionType nDirType, FigureStateType nStateTyp
 		return;
 
 
+
 	m_nDirect = nDirType;
 	m_nState = nStateType;
+
+	if (m_nDirect == FigureDirectionType::FDirNone)
+		m_nState = FigureStateType::FStateStand;
+
 
 	//由于图片没有左方向，所有左方向的动画都需要翻转180度
 	if (m_nDirect == FDirLeft || m_nDirect == FDirLeftAndUp || m_nDirect == FDirDownAndLeft)

@@ -22,7 +22,11 @@ public:
 	void setViewPointCenter(Point position,float dtTime);//设置摄像机中心位置
 	void moveMapTimmer1(float dt);
 	void moveMapTimmer2(float dt);
+
+	void moveMapCallBack();//移动角色
 public:
 	cocos2d::TMXTiledMap* _tileMap;
+
+	bool m_bCalling;
 };
 
